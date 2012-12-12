@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.TimerTask;
 
-public class RobotLiveLinearCamWin32 extends JPanel {
+public class RobotLiveLinearCamWindows extends JPanel {
     int[] pixels = new int[102]; // pixels representing a frame
     String filepath;
     
@@ -49,7 +49,7 @@ public class RobotLiveLinearCamWin32 extends JPanel {
                         SwingUtilities.invokeAndWait( new Runnable() {
                             @Override
                             public void run() {
-                                RobotLiveLinearCamWin32.this.repaint();
+                                RobotLiveLinearCamWindows.this.repaint();
                             }
                         } );
                         pixelsIndex = 0; // begins a new line of pixels
@@ -86,7 +86,7 @@ public class RobotLiveLinearCamWin32 extends JPanel {
         frame.setResizable( false );
         frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
         
-        RobotLiveLinearCamWin32 liveCamPanel = new RobotLiveLinearCamWin32(args[0]);
+        RobotLiveLinearCamWindows liveCamPanel = new RobotLiveLinearCamWindows(args[0]);
 
         
         frame.getContentPane().add( liveCamPanel );        
@@ -95,7 +95,7 @@ public class RobotLiveLinearCamWin32 extends JPanel {
         frame.setVisible( true );
     }
     
-    public RobotLiveLinearCamWin32(String filepath){
+    public RobotLiveLinearCamWindows(String filepath){
         this.filepath = filepath;
     }
     
